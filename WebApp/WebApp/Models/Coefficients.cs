@@ -5,10 +5,7 @@ using System.Web;
 
 namespace WebApp.Models
 {
-    public class Product
+    public class Coefficients
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
     }
 }
