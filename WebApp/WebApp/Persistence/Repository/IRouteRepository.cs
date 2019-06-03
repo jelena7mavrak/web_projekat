@@ -7,7 +7,7 @@ using System.Web.Routing;
 
 namespace WebApp.Persistence.Repository
 {
-    interface IRouteRepository : IRepository<Route, int>
+   public interface IRouteRepository : IRepository<Route, int>
     {
     }
 }

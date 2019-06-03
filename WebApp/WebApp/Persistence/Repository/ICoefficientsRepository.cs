@@ -7,7 +7,7 @@ using WebApp.Models;
 
 namespace WebApp.Persistence.Repository
 {
-    interface ICoefficientsRepository : IRepository<Coefficients, int>
+   public interface ICoefficientsRepository : IRepository<Coefficients, int>
     {
     }
 }

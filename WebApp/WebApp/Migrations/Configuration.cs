@@ -22,6 +22,29 @@ namespace WebApp.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+            var coef1 = new Coefficients { Id = 1, Coefficient = 0.5, Type=Enums.PassengerType.Pensioner };
+            var coef2 = new Coefficients { Id = 2, Coefficient = 0.8, Type=Enums.PassengerType.Student };
+            var coef3 = new Coefficients { Id = 3, Coefficient = 1, Type = Enums.PassengerType.Regular };
+
+            context.Coefficients.AddOrUpdate(a => a.Id, coef1);
+            context.Coefficients.AddOrUpdate(a => a.Id, coef2);
+            context.Coefficients.AddOrUpdate(a => a.Id, coef3);
+
+            context.SaveChanges();
+
+            var i1 = new Item { Id = 1, Type = Enums.TicketType.Annual };
+            var i2 = new Item { Id = 2, Type = Enums.TicketType.Daily };
+            var i3 = new Item { Id = 3, Type = Enums.TicketType.Hourly };
+            var i4 = new Item { Id = 4, Type = Enums.TicketType.Monthly };
+
+            context.Items.AddOrUpdate(a => a.Id, i1);
+            context.Items.AddOrUpdate(a => a.Id, i2);
+            context.Items.AddOrUpdate(a => a.Id, i3);
+            context.Items.AddOrUpdate(a => a.Id, i4);
+
+            context.SaveChanges();
+
+
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 var store = new RoleStore<IdentityRole>(context);

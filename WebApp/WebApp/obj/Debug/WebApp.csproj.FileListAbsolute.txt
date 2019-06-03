@@ -295,3 +295,4 @@ C:\Users\e39-2015\Documents\GitHub\web_projekat\WebApp\WebApp\bin\Microsoft.Owin
 C:\Users\e39-2015\Documents\GitHub\web_projekat\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\e39-2015\Documents\GitHub\web_projekat\WebApp\WebApp\bin\System.Web.Http.Owin.xml
 C:\Users\e39-2015\Documents\GitHub\web_projekat\WebApp\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\e39-2015\Documents\GitHub\web_projekat\WebApp\WebApp\obj\Debug\WebApp.Migrations.CreateModel.resources

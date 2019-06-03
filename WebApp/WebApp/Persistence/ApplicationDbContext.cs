@@ -12,6 +12,18 @@ namespace WebApp.Persistence
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         //public DbSet<Product> Products { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Coefficients> Coefficients { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<PricelistItem> PricelistItems { get; set; }
+        public DbSet<Pricelist> Pricelists { get; set; }
+        public DbSet<Route> Routes { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Station> Stations { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

@@ -7,7 +7,7 @@ using WebApp.Models;
 
 namespace WebApp.Persistence.Repository
 {
-    interface ITicketRepository : IRepository<Ticket, int>
+   public interface ITicketRepository : IRepository<Ticket, int>
     {
     }
 }

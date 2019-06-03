@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +14,7 @@ namespace WebApp.Models
         private double price;
         private Coefficients coefficients;
 
+        [Key]
         public int Id
         {
             get { return id; }
