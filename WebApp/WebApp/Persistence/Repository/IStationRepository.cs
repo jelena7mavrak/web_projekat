@@ -7,7 +7,7 @@ using WebApp.Models;
 
 namespace WebApp.Persistence.Repository
 {
-    interface IStationRepository : IRepository<Station, int>
+   public interface IStationRepository : IRepository<Station, int>
     {
     }
 }

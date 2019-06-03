@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +12,7 @@ namespace WebApp.Models
         private double x;
         private double y;
 
+        [Key]
         public int Id
         {
             get { return id; }

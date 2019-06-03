@@ -263,6 +263,10 @@
     <Compile Include="Migrations\201905270920371_AddProduct.Designer.cs">
       <DependentUpon>201905270920371_AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906030927172_CreateModel.cs" />
+    <Compile Include="Migrations\201906030927172_CreateModel.Designer.cs">
+      <DependentUpon>201906030927172_CreateModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -297,6 +301,10 @@
     <Compile Include="Persistence\Repository\ITicketRepository.cs" />
     <Compile Include="Persistence\Repository\LocationRepository.cs" />
     <Compile Include="Persistence\Repository\PersonRepository.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Persistence\Repository\PricelistItemRepository.cs" />
+>>>>>>> aa42cbbfa08f9e028b433edb55c2da013e7ab4ef
     <Compile Include="Persistence\Repository\PricelistRepository.cs" />
     <Compile Include="Persistence\Repository\Repository.cs" />
     <Compile Include="Persistence\Repository\RouteRepository.cs" />
@@ -408,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905270920371_AddProduct.resx">
       <DependentUpon>201905270920371_AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906030927172_CreateModel.resx">
+      <DependentUpon>201906030927172_CreateModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

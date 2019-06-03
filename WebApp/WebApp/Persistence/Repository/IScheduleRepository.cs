@@ -7,7 +7,7 @@ using WebApp.Models;
 
 namespace WebApp.Persistence.Repository
 {
-    interface IScheduleRepository : IRepository<Schedule, int>
+   public interface IScheduleRepository : IRepository<Schedule, int>
     {
     }
 }

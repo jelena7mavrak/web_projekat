@@ -7,7 +7,7 @@ using WebApp.Models;
 
 namespace WebApp.Persistence.Repository
 {
-    interface ILocationRepository : IRepository<Location, int>
+   public interface ILocationRepository : IRepository<Location, int>
     {
     }
 }
