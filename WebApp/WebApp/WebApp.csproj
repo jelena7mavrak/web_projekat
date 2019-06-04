@@ -301,10 +301,7 @@
     <Compile Include="Persistence\Repository\ITicketRepository.cs" />
     <Compile Include="Persistence\Repository\LocationRepository.cs" />
     <Compile Include="Persistence\Repository\PersonRepository.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Persistence\Repository\PricelistItemRepository.cs" />
->>>>>>> aa42cbbfa08f9e028b433edb55c2da013e7ab4ef
     <Compile Include="Persistence\Repository\PricelistRepository.cs" />
     <Compile Include="Persistence\Repository\Repository.cs" />
     <Compile Include="Persistence\Repository\RouteRepository.cs" />
