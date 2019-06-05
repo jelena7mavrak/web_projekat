@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="success">
+        <th colspan="2">
+          Login
+          </th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td>Uername:</td>
+        <td>
+          <input type="text" formControlName="UserName" placeholder="Username or email"required>
+        </td>
+      </tr>
+      <tr>
+          <td>Psssword:</td>
+          <td>
+            <input type="password" formControlName="Password" placeholder="Password.."required>
+          </td>
+        </tr>
+        <tr class="success">
+          <td colspan="2">
+            <button class="btn btn-success pull-right" type="submit">Login</button>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</form>
