@@ -43,7 +43,7 @@ namespace WebApp.Migrations
             context.Items.AddOrUpdate(a => a.Id, i4);
 
             context.SaveChanges();
-
+            
 
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {

@@ -261,13 +261,9 @@
     <Compile Include="Migrations\201905222056072_InitialMigration.Designer.cs">
       <DependentUpon>201905222056072_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905270920371_AddProduct.cs" />
-    <Compile Include="Migrations\201905270920371_AddProduct.Designer.cs">
-      <DependentUpon>201905270920371_AddProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906030927172_CreateModel.cs" />
-    <Compile Include="Migrations\201906030927172_CreateModel.Designer.cs">
-      <DependentUpon>201906030927172_CreateModel.cs</DependentUpon>
+    <Compile Include="Migrations\201906060925427_CreateModel.cs" />
+    <Compile Include="Migrations\201906060925427_CreateModel.Designer.cs">
+      <DependentUpon>201906060925427_CreateModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -414,11 +410,8 @@
     <EmbeddedResource Include="Migrations\201905222056072_InitialMigration.resx">
       <DependentUpon>201905222056072_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905270920371_AddProduct.resx">
-      <DependentUpon>201905270920371_AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030927172_CreateModel.resx">
-      <DependentUpon>201906030927172_CreateModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906060925427_CreateModel.resx">
+      <DependentUpon>201906060925427_CreateModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
