@@ -12,7 +12,7 @@ namespace WebApp.Models
         private Item item;
         private Pricelist pricelist;
         private double price;
-        private Coefficients coefficients;
+        private Coefficients coefficient;
 
         [Key]
         public int Id
@@ -39,10 +39,10 @@ namespace WebApp.Models
             set { price = value; }
         }
 
-        public Coefficients Coefficients
+        public Coefficients Coefficient
         {
-            get { return coefficients; }
-            set { coefficients = value; }
+            get { return coefficient; }
+            set { coefficient = value; }
         }
     }
 }

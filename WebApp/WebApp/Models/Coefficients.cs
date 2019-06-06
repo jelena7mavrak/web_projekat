@@ -11,7 +11,7 @@ namespace WebApp.Models
     {
         [Key]
         private int id;
-        private double coefficient;
+        private double coeff;
         private PassengerType type;
 
         public int Id
@@ -22,8 +22,8 @@ namespace WebApp.Models
 
         public double Coefficient
         {
-            get { return coefficient; }
-            set { coefficient = value; }
+            get { return coeff; }
+            set { coeff = value; }
         }
         public PassengerType Type
         {
