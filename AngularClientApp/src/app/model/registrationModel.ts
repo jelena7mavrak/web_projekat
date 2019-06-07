@@ -4,7 +4,7 @@ export class RegistrationModel{
     UserName : string;
     Email : string;
     Address : string;
-    BirthdayDate : string
+    BirthdayDate : string;
     PassengerType : string;
     Password : string;
     ConfirmPassword : string;

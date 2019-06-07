@@ -10,5 +10,6 @@ namespace WebApp.Persistence.Repository
    public interface IPersonRepository : IRepository<Person, int>
     {
         bool Login(string username, string password);
+        bool Register(Person user);
     }
 }

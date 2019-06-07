@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using static WebApp.Models.Enums;
 
 namespace WebApp.Models
 {
-    public class Person
+    public class Person : IdentityUser
     {
         private int id;
         private string name;

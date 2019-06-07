@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { RegistrationService } from 'src/app/Service/registration.service';
+import { RegistrationService } from 'src/app/service/registration.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class RegistrationComponent implements OnInit {
 
   registerForm = this.fb.group({
     Name : [''],
-    Lastname : [''],
+    LastName : [''],
     UserName : ['', Validators.required],
     Email : ['', Validators.required],
     Address : [''],

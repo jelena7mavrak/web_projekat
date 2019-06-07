@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpService } from './http.service';
+import { HttpService } from 'src/app/service/http.service';
 import { LoginModel } from '../model/loginModel';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';

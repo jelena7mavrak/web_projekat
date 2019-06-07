@@ -3,13 +3,13 @@
         <thead>
             <tr class=success>
                 <th colspan="2">
-                    Registraion
+                    Registration
                 </th>
             </tr>
         </thead>
         <tbody>
             <tr id="upozorenje" class="hidden">
-               <td colspan="2">GRESKA: Koriscnicko ime vec postoji, izaberite drugo!</td>
+               <td colspan="2" hidden="hidden">GRESKA: Koriscnicko ime vec postoji, izaberite drugo!</td>
             </tr>
             <tr>
                 <th>Name: </th>
@@ -20,13 +20,13 @@
             <tr>
                 <th>Lastname: </th>
                 <td>
-                    <input type="text" formControlName="Lastname" placeholder="Lastname..." required />
+                    <input type="text" formControlName="LastName" placeholder="Lastname..." required />
                 </td>
             </tr>
             <tr>
                 <th>Username: </th>
                 <td>
-                    <input type="text" formControlName="Username" placeholder="Username..." required />
+                    <input type="text" formControlName="UserName" placeholder="Username..." required />
                 </td>
             </tr>
             <tr>
@@ -44,16 +44,16 @@
             <tr>
                 <th>Birthday date: </th>
                 <td>
-                    <input type="text" formControlName="Birthday date" placeholder="Birthday date..."/>
+                    <input type="text" formControlName="BirthdayDate" placeholder="Birthday date..."/>
                 </td>
             </tr>
             <tr>
                 <th>Passenger Type: </th>
                 <td>
                     <select name="PassengerType" formContorlName="PassengerType" required>
-                        <option value="Regular">Regular</option>
-                        <option value="Student">Student</option>
-                        <option value="Pensioner">Pensioner</option>
+                        <option formContorlName="PassengerType" value="Regular">Regular</option>
+                        <option formContorlName="PassengerType" value="Student">Student</option>
+                        <option formContorlName="PassengerType" value="Pensioner">Pensioner</option>
                     </select>
                 </td>
             </tr>
@@ -67,6 +67,11 @@
                 <th>Confirm Password: </th>
                 <td>
                     <input type="password" formControlName="ConfirmPassword" placeholder="Confirm Password..." required/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="btn btn-success pull-right" type="submit">Register</button>
                 </td>
             </tr>
         </tbody>

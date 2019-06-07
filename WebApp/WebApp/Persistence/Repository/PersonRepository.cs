@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -27,6 +29,25 @@ namespace WebApp.Persistence.Repository
                     return true;
             }
             return false;
+        }
+
+        public bool Register(Person user)
+        {
+            var userStore = new UserStore<Person>(context);
+            var userManager = new UserManager<Person>(userStore);
+
+            if (!AppDbContext.Users.Any(u => u.Email == user.Email || u.UserName == user.UserName))
+            {
+                userManager.Create(user);
+
+                context.SaveChanges();
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
+using static WebApp.Models.Enums;
 
 namespace WebApp.Models
 {

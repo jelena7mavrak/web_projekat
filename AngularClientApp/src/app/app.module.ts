@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HttpService } from './service/http.service';
+import { HttpService } from 'src/app/service/http.service';
 import { LoginServiceService } from './service/login-service.service';
 import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationService } from 'src/app/service/registration.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { RegistrationComponent } from './registration/registration.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [HttpService, LoginServiceService],
+  providers: [HttpService, LoginServiceService,  RegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
