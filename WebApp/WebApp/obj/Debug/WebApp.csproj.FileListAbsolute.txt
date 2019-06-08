@@ -595,3 +595,4 @@ C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\bin\Microsoft.Owin.Sec
 C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\bin\System.Web.Http.Owin.xml
 C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\obj\Debug\WebApp.csproj.CopyComplete
+C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
