@@ -9,7 +9,7 @@ using WebApp.Models;
 
 namespace WebApp.Persistence.Repository
 {
-    public class PersonRepository : Repository<Person, int>, IPersonRepository
+    public class PersonRepository : Repository<ApplicationUser, int>, IPersonRepository
     {
         protected ApplicationDbContext AppDbContext
         {
@@ -22,19 +22,19 @@ namespace WebApp.Persistence.Repository
 
         public bool Login(string username, string password)
         {
-            foreach(var person in AppDbContext.Persons)
+            foreach(var user in AppDbContext.Users)
             {
-                if ((person.Name == username || person.Email == username) &&
-                    ApplicationUser.VerifyHashedPassword(person.Password, password))
+                if ((user.Name == username || user.Email == username) &&
+                    ApplicationUser.VerifyHashedPassword(user.Password, password))
                     return true;
             }
             return false;
         }
 
-        public bool Register(Person user)
+        public bool Register(ApplicationUser user)
         {
-            var userStore = new UserStore<Person>(context);
-            var userManager = new UserManager<Person>(userStore);
+            var userStore = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(userStore);
 
             if (!AppDbContext.Users.Any(u => u.Email == user.Email || u.UserName == user.UserName))
             {

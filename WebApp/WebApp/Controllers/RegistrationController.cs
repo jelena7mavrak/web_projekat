@@ -25,10 +25,10 @@ namespace WebApp.Controllers
         {
             DateTime.TryParse(registerBinding.BirthdayDate, out DateTime date);
 
-            Person user = new Person()
+            ApplicationUser user = new ApplicationUser()
             {
                 
-                Id = int.Parse(registerBinding.UserName),
+                Id = registerBinding.UserName,
                 Name = registerBinding.Name,
                 LastName = registerBinding.Lastname,
                 UserName = registerBinding.UserName,
