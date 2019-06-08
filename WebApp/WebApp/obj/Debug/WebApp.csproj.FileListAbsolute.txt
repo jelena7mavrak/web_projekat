@@ -446,7 +446,6 @@ C:\Users\Jelena\Desktop\web_projekat\WebApp\WebApp\obj\Debug\WebApp.csproj.CopyC
 C:\Users\Jelena\Desktop\web_projekat\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\Jelena\Desktop\web_projekat\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\Jelena\Desktop\web_projekat\WebApp\WebApp\obj\Debug\WebApp.Migrations.CreateModel.resources
-C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
 C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\obj\Debug\WebApp.Migrations.InitialMigration.resources
 C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\obj\Debug\WebApp.Migrations.CreateModel.resources
 C:\Users\Dina\Documents\GitHub\web_projekat\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.cache

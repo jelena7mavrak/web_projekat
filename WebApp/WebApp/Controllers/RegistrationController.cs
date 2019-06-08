@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using WebApp.Models;
 using WebApp.Persistence.UnitOfWork;
+using static WebApp.Models.Enums;
 
 namespace WebApp.Controllers
 {
@@ -27,7 +28,7 @@ namespace WebApp.Controllers
 
             ApplicationUser user = new ApplicationUser()
             {
-                
+
                 Id = registerBinding.UserName,
                 Name = registerBinding.Name,
                 LastName = registerBinding.Lastname,
@@ -36,7 +37,8 @@ namespace WebApp.Controllers
                 Address = registerBinding.Address,
                 BirthdayDate = date,
                 PasswordHash = ApplicationUser.HashPassword(registerBinding.Password),
-                PassengerType = registerBinding.PassengerType
+                PassengerType = registerBinding.PassengerType,
+                //State = VerificationType.Rejected
             };
 
             if (!unitOfWork.PersonRepository.Register(user))
