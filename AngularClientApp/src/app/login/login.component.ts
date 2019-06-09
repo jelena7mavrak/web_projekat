@@ -21,5 +21,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.loginService.login(this.loginForm.value).subscribe(data=>{console.log(data)});
+    
   }
 }

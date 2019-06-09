@@ -25,7 +25,7 @@ namespace WebApp.Persistence.Repository
             foreach(var user in AppDbContext.Users)
             {
                 if ((user.Name == username || user.Email == username) &&
-                    ApplicationUser.VerifyHashedPassword(user.Password, password))
+                    ApplicationUser.VerifyHashedPassword(user.PasswordHash, password))
                     return true;
             }
             return false;

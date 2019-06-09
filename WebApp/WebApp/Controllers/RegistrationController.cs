@@ -25,7 +25,7 @@ namespace WebApp.Controllers
         public IHttpActionResult PostRegistration(RegisterBindingModel registerBinding)
         {
             DateTime.TryParse(registerBinding.BirthdayDate, out DateTime date);
-
+            //DateTime d = DateTime.Parse(registerBinding.BirthdayDate);
             ApplicationUser user = new ApplicationUser()
             {
 

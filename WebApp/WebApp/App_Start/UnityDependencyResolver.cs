@@ -73,7 +73,7 @@ namespace WebApp.App_Start
             container.RegisterType<DbContext, ApplicationDbContext>(new PerResolveLifetimeManager());
             container.RegisterType<IUnitOfWork, DemoUnitOfWork>();
 
-            container.RegisterType<IAddressRepository, AddressRepository>();
+            //container.RegisterType<IAddressRepository, AddressRepository>();
             container.RegisterType<ICoefficientsRepository, CoefficientsRepository>();
             container.RegisterType<IItemRepository, ItemRepository>();
             container.RegisterType<ILocationRepository, LocationRepository>();

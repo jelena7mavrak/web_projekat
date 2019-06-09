@@ -8,17 +8,6 @@ namespace WebApp.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Addresses",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        City = c.String(),
-                        StreetName = c.String(),
-                        StreetNumber = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.Coefficients",
                 c => new
                     {
@@ -46,25 +35,6 @@ namespace WebApp.Migrations
                         Y = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.People",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        LastName = c.String(),
-                        Email = c.String(),
-                        Password = c.String(),
-                        BirthdayDate = c.DateTime(nullable: false),
-                        Picture = c.String(),
-                        PassengerType = c.Int(nullable: false),
-                        State = c.Int(nullable: false),
-                        Address_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Addresses", t => t.Address_Id)
-                .Index(t => t.Address_Id);
             
             CreateTable(
                 "dbo.PricelistItems",
@@ -113,13 +83,11 @@ namespace WebApp.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Address_Id = c.Int(),
+                        Address = c.String(),
                         Location_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Addresses", t => t.Address_Id)
                 .ForeignKey("dbo.Locations", t => t.Location_Id)
-                .Index(t => t.Address_Id)
                 .Index(t => t.Location_Id);
             
             CreateTable(
@@ -155,6 +123,14 @@ namespace WebApp.Migrations
                 .Index(t => t.Station_Id)
                 .Index(t => t.Route_Id);
             
+            AddColumn("dbo.AspNetUsers", "Name", c => c.String());
+            AddColumn("dbo.AspNetUsers", "LastName", c => c.String());
+            AddColumn("dbo.AspNetUsers", "Password", c => c.String());
+            AddColumn("dbo.AspNetUsers", "BirthdayDate", c => c.DateTime(nullable: false));
+            AddColumn("dbo.AspNetUsers", "Address", c => c.String());
+            AddColumn("dbo.AspNetUsers", "Picture", c => c.String());
+            AddColumn("dbo.AspNetUsers", "PassengerType", c => c.Int(nullable: false));
+            AddColumn("dbo.AspNetUsers", "State", c => c.Int(nullable: false));
         }
         
         public override void Down()
@@ -163,20 +139,24 @@ namespace WebApp.Migrations
             DropForeignKey("dbo.StationRoutes", "Route_Id", "dbo.Routes");
             DropForeignKey("dbo.StationRoutes", "Station_Id", "dbo.Stations");
             DropForeignKey("dbo.Stations", "Location_Id", "dbo.Locations");
-            DropForeignKey("dbo.Stations", "Address_Id", "dbo.Addresses");
             DropForeignKey("dbo.PricelistItems", "Pricelist_Id", "dbo.Pricelists");
             DropForeignKey("dbo.PricelistItems", "Item_Id", "dbo.Items");
             DropForeignKey("dbo.PricelistItems", "Coefficient_Id", "dbo.Coefficients");
-            DropForeignKey("dbo.People", "Address_Id", "dbo.Addresses");
             DropIndex("dbo.StationRoutes", new[] { "Route_Id" });
             DropIndex("dbo.StationRoutes", new[] { "Station_Id" });
             DropIndex("dbo.Stations", new[] { "Location_Id" });
-            DropIndex("dbo.Stations", new[] { "Address_Id" });
             DropIndex("dbo.Routes", new[] { "Schedule_Id" });
             DropIndex("dbo.PricelistItems", new[] { "Pricelist_Id" });
             DropIndex("dbo.PricelistItems", new[] { "Item_Id" });
             DropIndex("dbo.PricelistItems", new[] { "Coefficient_Id" });
-            DropIndex("dbo.People", new[] { "Address_Id" });
+            DropColumn("dbo.AspNetUsers", "State");
+            DropColumn("dbo.AspNetUsers", "PassengerType");
+            DropColumn("dbo.AspNetUsers", "Picture");
+            DropColumn("dbo.AspNetUsers", "Address");
+            DropColumn("dbo.AspNetUsers", "BirthdayDate");
+            DropColumn("dbo.AspNetUsers", "Password");
+            DropColumn("dbo.AspNetUsers", "LastName");
+            DropColumn("dbo.AspNetUsers", "Name");
             DropTable("dbo.StationRoutes");
             DropTable("dbo.Tickets");
             DropTable("dbo.Schedules");
@@ -184,11 +164,9 @@ namespace WebApp.Migrations
             DropTable("dbo.Routes");
             DropTable("dbo.Pricelists");
             DropTable("dbo.PricelistItems");
-            DropTable("dbo.People");
             DropTable("dbo.Locations");
             DropTable("dbo.Items");
             DropTable("dbo.Coefficients");
-            DropTable("dbo.Addresses");
         }
     }
 }

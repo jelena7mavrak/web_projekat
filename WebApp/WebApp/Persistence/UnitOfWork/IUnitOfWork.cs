@@ -9,7 +9,7 @@ namespace WebApp.Persistence.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        IAddressRepository AddressRepository { get; set; }
+        //IAddressRepository AddressRepository { get; set; }
         ICoefficientsRepository CoefficientsRepository { get; set; }
         IItemRepository ItemRepository { get; set; }
         ILocationRepository LocationRepository { get; set; }

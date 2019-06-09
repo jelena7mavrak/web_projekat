@@ -17,8 +17,7 @@ namespace WebApp.Persistence.UnitOfWork
             _context = context;
         }
 
-        [Dependency]
-        public IAddressRepository AddressRepository { get; set; }
+       
         [Dependency]
         public ICoefficientsRepository CoefficientsRepository { get; set; }
         [Dependency]

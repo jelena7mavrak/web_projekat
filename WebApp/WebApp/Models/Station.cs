@@ -10,7 +10,7 @@ namespace WebApp.Models
     {
         private int id;
         private string name;
-        private Address address;
+        private string address;
         private List<Route> routes;
         private Location location;
 
@@ -27,7 +27,7 @@ namespace WebApp.Models
             set { name = value; }
         }
 
-        public Address Address
+        public string Address
         {
             get { return address; }
             set { address = value; }
