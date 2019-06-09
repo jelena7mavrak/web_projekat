@@ -11,6 +11,7 @@ namespace WebApp.Models
         private int id;
         private DateTime startDate;
         private DateTime endDate;
+        private bool inUse;
 
         [Key]
         public int Id
@@ -29,6 +30,12 @@ namespace WebApp.Models
         {
             get { return endDate; }
             set { endDate = value; }
+        }
+
+        public bool InUse
+        {
+            get => InUse;
+            set => InUse = value;
         }
     }
 }

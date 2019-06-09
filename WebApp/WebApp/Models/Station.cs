@@ -13,6 +13,7 @@ namespace WebApp.Models
         private string address;
         private List<Route> routes;
         private Location location;
+        private int locationId;
 
         [Key]
         public int Id
@@ -45,6 +46,8 @@ namespace WebApp.Models
             get { return location; }
             set { location = value; }
         }
+
+        public int LocationId { get => locationId; set => locationId = value; }
 
         public Station()
         {

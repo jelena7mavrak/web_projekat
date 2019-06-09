@@ -9,8 +9,10 @@ namespace WebApp.Models
     public class PricelistItem
     {
         private int id;
-        private Item item;
-        private Pricelist pricelist;
+        public virtual Item Item { get; set; }
+        private int itemId;
+        public virtual Pricelist Pricelist { get; set; }
+        private int pricelistId;
         private double price;
         private Coefficients coefficient;
 
@@ -20,19 +22,6 @@ namespace WebApp.Models
             get { return id; }
             set { id = value; }
         }
-
-        public Item Item
-        {
-            get { return item; }
-            set { item = value; }
-        }
-
-        public Pricelist Pricelist
-        {
-            get { return pricelist; }
-            set { pricelist = value; }
-        }
-
         public double Price
         {
             get { return price; }
@@ -43,6 +32,17 @@ namespace WebApp.Models
         {
             get { return coefficient; }
             set { coefficient = value; }
+        }
+
+        public int ItemId
+        {
+            get => itemId;
+            set => itemId = value;
+        }
+        public int PricelistId
+        {
+            get => pricelistId;
+            set => pricelistId = value;
         }
     }
 }

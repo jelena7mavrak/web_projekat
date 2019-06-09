@@ -42,17 +42,17 @@ namespace WebApp.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Price = c.Double(nullable: false),
+                        ItemId = c.Int(nullable: false),
+                        PricelistId = c.Int(nullable: false),
                         Coefficient_Id = c.Int(),
-                        Item_Id = c.Int(),
-                        Pricelist_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Coefficients", t => t.Coefficient_Id)
-                .ForeignKey("dbo.Items", t => t.Item_Id)
-                .ForeignKey("dbo.Pricelists", t => t.Pricelist_Id)
-                .Index(t => t.Coefficient_Id)
-                .Index(t => t.Item_Id)
-                .Index(t => t.Pricelist_Id);
+                .ForeignKey("dbo.Items", t => t.ItemId, cascadeDelete: true)
+                .ForeignKey("dbo.Pricelists", t => t.PricelistId, cascadeDelete: true)
+                .Index(t => t.ItemId)
+                .Index(t => t.PricelistId)
+                .Index(t => t.Coefficient_Id);
             
             CreateTable(
                 "dbo.Pricelists",
@@ -61,6 +61,7 @@ namespace WebApp.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         StartDate = c.DateTime(nullable: false),
                         EndDate = c.DateTime(nullable: false),
+                        InUse = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -84,11 +85,11 @@ namespace WebApp.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Address = c.String(),
-                        Location_Id = c.Int(),
+                        LocationId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Locations", t => t.Location_Id)
-                .Index(t => t.Location_Id);
+                .ForeignKey("dbo.Locations", t => t.LocationId, cascadeDelete: true)
+                .Index(t => t.LocationId);
             
             CreateTable(
                 "dbo.Schedules",
@@ -138,17 +139,17 @@ namespace WebApp.Migrations
             DropForeignKey("dbo.Routes", "Schedule_Id", "dbo.Schedules");
             DropForeignKey("dbo.StationRoutes", "Route_Id", "dbo.Routes");
             DropForeignKey("dbo.StationRoutes", "Station_Id", "dbo.Stations");
-            DropForeignKey("dbo.Stations", "Location_Id", "dbo.Locations");
-            DropForeignKey("dbo.PricelistItems", "Pricelist_Id", "dbo.Pricelists");
-            DropForeignKey("dbo.PricelistItems", "Item_Id", "dbo.Items");
+            DropForeignKey("dbo.Stations", "LocationId", "dbo.Locations");
+            DropForeignKey("dbo.PricelistItems", "PricelistId", "dbo.Pricelists");
+            DropForeignKey("dbo.PricelistItems", "ItemId", "dbo.Items");
             DropForeignKey("dbo.PricelistItems", "Coefficient_Id", "dbo.Coefficients");
             DropIndex("dbo.StationRoutes", new[] { "Route_Id" });
             DropIndex("dbo.StationRoutes", new[] { "Station_Id" });
-            DropIndex("dbo.Stations", new[] { "Location_Id" });
+            DropIndex("dbo.Stations", new[] { "LocationId" });
             DropIndex("dbo.Routes", new[] { "Schedule_Id" });
-            DropIndex("dbo.PricelistItems", new[] { "Pricelist_Id" });
-            DropIndex("dbo.PricelistItems", new[] { "Item_Id" });
             DropIndex("dbo.PricelistItems", new[] { "Coefficient_Id" });
+            DropIndex("dbo.PricelistItems", new[] { "PricelistId" });
+            DropIndex("dbo.PricelistItems", new[] { "ItemId" });
             DropColumn("dbo.AspNetUsers", "State");
             DropColumn("dbo.AspNetUsers", "PassengerType");
             DropColumn("dbo.AspNetUsers", "Picture");
