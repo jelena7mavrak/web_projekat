@@ -9,8 +9,10 @@ namespace WebApp.Persistence.Repository
 {
     public class PricelistItemRepository : Repository<PricelistItem, int>, IPricelistItemRepository
     {
+        protected ApplicationDbContext AppDbContext { get { return context as ApplicationDbContext; } }
         public PricelistItemRepository(DbContext context) : base(context)
         {
+
         }
     }
 }
