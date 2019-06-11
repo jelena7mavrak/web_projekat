@@ -16,6 +16,10 @@ export class PricelistSService extends HttpService{
     return this.http.get<any>(this.specificUrl + ticketType);
   }
 
+  buyTicket(ticketType : number):Observable<any>{
+    return this.http.post<any>(this.url + "/api/Ticket/BuyTicket/" + ticketType, null);
+  }
+
   addPricelist(pricelist : AddPricelistModel):Observable<any>{
     let httpOptions = {
       headers:{

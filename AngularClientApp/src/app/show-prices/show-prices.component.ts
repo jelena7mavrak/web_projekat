@@ -23,4 +23,9 @@ export class ShowPricesComponent implements OnInit {
     });
   }
 
+  onSubmit2(ticketType : number){
+    this.pricelistSservice.buyTicket(ticketType).subscribe(data => {
+      console.log('Ticket successfully bought!');
+  });
+  }
 }
