@@ -13,5 +13,6 @@ namespace WebApp.Persistence.Repository
         bool AddPricelistItem(PricelistItemBindingModel pricelistItem, int pricelistId);
         ActivePricelistBindingModel GetActivePricelist(int pricelistId);
         bool UpdatePricelist(ActivePricelistBindingModel pricelist);
+        int GetPricelistItemId(int pricelistId, int itemId);
     }
 }

@@ -9,5 +9,7 @@ namespace WebApp.Persistence.Repository
 {
    public interface ITicketRepository : IRepository<Ticket, int>
     {
+        Ticket BuyTicket(double price, int pricelistItemId);
+
     }
 }

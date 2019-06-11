@@ -32,10 +32,10 @@ namespace WebApp.Migrations
 
             context.SaveChanges();
 
-            var i1 = new Item { Id = 1, Type = Enums.TicketType.Annual };
+            var i1 = new Item { Id = 1, Type = Enums.TicketType.Hourly };
             var i2 = new Item { Id = 2, Type = Enums.TicketType.Daily };
-            var i3 = new Item { Id = 3, Type = Enums.TicketType.Hourly };
-            var i4 = new Item { Id = 4, Type = Enums.TicketType.Monthly };
+            var i3 = new Item { Id = 3, Type = Enums.TicketType.Monthly };
+            var i4 = new Item { Id = 4, Type = Enums.TicketType.Annual };
 
             context.Items.AddOrUpdate(a => a.Id, i1);
             context.Items.AddOrUpdate(a => a.Id, i2);
@@ -45,21 +45,6 @@ namespace WebApp.Migrations
             context.SaveChanges();
 
             
-            /*var pricel = new Pricelist() { Id = 1, InUse = true, StartDate = DateTime.Now, EndDate = new DateTime(2020, 5, 30) };
-            context.Pricelists.AddOrUpdate(a => a.Id, pricel);
-            context.SaveChanges();
-            
-            var pricelistItem1 = new PricelistItem() { Id = 1, ItemId = context.Items.Find(i1.Id).Id, PricelistId = context.Pricelists.Find(pricel.Id).Id, Price = 65 };
-            var pricelistItem2 = new PricelistItem() { Id = 2, ItemId = context.Items.Find(i2.Id).Id, PricelistId = context.Pricelists.Find(pricel.Id).Id, Price = 300 };
-            var pricelistItem3 = new PricelistItem() { Id = 3, ItemId = context.Items.Find(i3.Id).Id, PricelistId = context.Pricelists.Find(pricel.Id).Id, Price = 1000 };
-            var pricelistItem4 = new PricelistItem() { Id = 4, ItemId = context.Items.Find(i4.Id).Id, PricelistId = context.Pricelists.Find(pricel.Id).Id, Price = 6000 };
-
-            context.PricelistItems.AddOrUpdate(p => p.Id, pricelistItem2);
-            context.PricelistItems.AddOrUpdate(p => p.Id, pricelistItem2);
-            context.PricelistItems.AddOrUpdate(p => p.Id, pricelistItem3);
-            context.PricelistItems.AddOrUpdate(p => p.Id, pricelistItem4);
-
-            context.SaveChanges();*/
 
 
             if (!context.Roles.Any(r => r.Name == "Admin"))
