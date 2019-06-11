@@ -50,11 +50,14 @@
             <tr>
                 <th>Passenger Type: </th>
                 <td>
-                    <select name="PassengerType" formContorlName="PassengerType" required>
-                        <option formContorlName="PassengerType" value="Regular">Regular</option>
-                        <option formContorlName="PassengerType" value="Student">Student</option>
-                        <option formContorlName="PassengerType" value="Pensioner">Pensioner</option>
-                    </select>
+                   <!--- <select>
+                        <option name="PassengerType" formContorlName="PassengerType" value="3">Regular</option>
+                        <option name="PassengerType" formContorlName="PassengerType" value="1">Student</option>
+                        <option name="PassengerType" formContorlName="PassengerType" value="2">Pensioner</option>
+                    </select> -->
+                    <input type="radio" name="PassengerType" formContorlName="PassengerType" value="3" checked="checked">Regular<br>
+                    <input type="radio" name="PassengerType" formContorlName="PassengerType" value="1">Student<br>
+                    <input type="radio" name="PassengerType" formContorlName="PassengerType" value="2">Pensioner<br>
                 </td>
             </tr>
             <tr>

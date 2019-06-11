@@ -11,14 +11,18 @@ import { LoginServiceService } from './service/login-service.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationService } from 'src/app/service/registration.service';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { PricelistComponent } from './pricelist/pricelist.component';
+import { ShowPricesComponent } from './show-prices/show-prices.component';
+import { PricelistSService } from 'src/app/service/pricelist-s.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    NavbarComponent
+    NavbarComponent,
+    PricelistComponent,
+    ShowPricesComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule, 
     FormsModule
   ],
-  providers: [HttpService, LoginServiceService,  RegistrationService],
+  providers: [HttpService, LoginServiceService,  RegistrationService, PricelistSService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

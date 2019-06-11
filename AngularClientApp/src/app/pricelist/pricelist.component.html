@@ -1,0 +1,73 @@
+<form [formGroup]="addPricelistForm" (ngSubmit)="addPricelist()">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="success">
+          <th colspan="2">
+              Vreme trajanja novog cenovnika:
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pocetak: </td>
+        <td>
+          <input type="text" formControlName="StartDate" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Kraj:</td>
+        <td>
+          <input type="text" formControlName="EndDate" required>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="btn btn-success pull-right" type="submit">Posalji</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form> 
+
+<form [formGroup]="addPricelistItemForm" (ngSubmit)="addPricelistItem()">
+  <table class="table table-bordered" *ngIf="pricelistAdded">
+      <thread>
+        <tr class="success">
+          <th colspan="2">
+              Dodajte cene:                    
+          </th>
+        </tr>
+      </thread>
+      <tbody>
+        <tr>
+          <td>Vremenska karta:</td>
+          <td>
+              <input type="text" formControlName="HourlyPrice" required>
+          </td>
+      </tr>
+      <tr>
+          <td>Dnevna karta:</td>
+          <td>
+              <input type="text" formControlName="DailyPrice" required>
+          </td>
+      </tr>
+      <tr>
+         <td>Mesecna karta:</td>
+         <td>
+             <input type="text" formControlName="MonthlyPrice" required>
+         </td>
+     </tr>
+     <tr>
+         <td>Godisnja karta:</td>
+         <td>
+             <input type="text" formControlName="AnnualPrice" required>
+         </td>
+     </tr>
+      <tr class="success">
+        <td colspan="2">
+              <button class="btn btn-success pull-right" type="submit">Dodaj</button>
+        </td>
+    </tr>
+      </tbody>
+  </table>
+</form>
