@@ -17,10 +17,10 @@ namespace WebApp.Persistence.Repository
 
         public int AddPricelist(PricelistBindingModel pricelist)
         {
-            var activePricelist = AppDbContext.Pricelists.Where(p => p.InUse).First();
+            /*var activePricelist = AppDbContext.Pricelists.Where(p => p.InUse).First();
 
             activePricelist.InUse = false;
-            AppDbContext.SaveChanges();
+            AppDbContext.SaveChanges();*/
 
             Pricelist newPricelist = new Pricelist()
             {
