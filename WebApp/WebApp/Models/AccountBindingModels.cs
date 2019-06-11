@@ -187,7 +187,7 @@ namespace WebApp.Models
         public DateTime EndDate { get; set; }
 
         [Display(Name = "IsActive")]
-        public bool IsActive { get; set; }
+        public bool InUse { get; set; }
     }
 
     public class PricelistItemBindingModel
