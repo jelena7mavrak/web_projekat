@@ -10,10 +10,10 @@ import { ActivePricelistModel } from 'src/app/model/activePricelistModel';
   providedIn: 'root'
 })
 export class PricelistSService extends HttpService{
-  specificUrl = this.url + "/api/Pricelist/GetPricelist";
+  specificUrl = this.url + "/api/Pricelist/GetPricelist/";
   
   getPrice(ticketType : number) : Observable<any>{
-    return this.http.get<any>(this.specificUrl + '?TicketType=${ticketType}');
+    return this.http.get<any>(this.specificUrl + ticketType);
   }
 
   addPricelist(pricelist : AddPricelistModel):Observable<any>{

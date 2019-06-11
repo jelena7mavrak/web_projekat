@@ -25,7 +25,7 @@ namespace WebApp.Controllers
         }
 
         [ResponseType(typeof(double))]
-        [Route("GetPricelist")]
+        [Route("GetPricelist/{ticketT}")]
         public IHttpActionResult GetPricelist(TicketType ticketT)
         {
             int pricelistId = unitOfWork.PricelistRepository.GetPricelistIdActive();
