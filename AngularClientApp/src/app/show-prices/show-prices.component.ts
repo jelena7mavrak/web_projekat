@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PricelistSService } from 'src/app/service/pricelist-s.service';
+import { PricelistModel } from 'src/app/model/pricelistModel';
 
 @Component({
   selector: 'app-show-prices',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowPricesComponent implements OnInit {
 
-  constructor() { }
+  price : string;
+
+  constructor(private pricelistSservice: PricelistSService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(ticketType : number){
+    this.pricelistSservice.getPrice(ticketType).subscribe(data => {
+      console.log(data);
+      this.price = data;
+    });
   }
 
 }

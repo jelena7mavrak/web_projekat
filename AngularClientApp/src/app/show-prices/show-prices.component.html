@@ -1,3 +1,31 @@
-<p>
-  show-prices works!
-</p>
+<table class="table table-boredered">
+  <thead>
+    <tr class="success">
+      <th colspan="2">
+          Cenovnik
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Izaberite kartu: </td>
+      <td>
+        <select #ticketType>
+          <option value="0">Vremenska - 60 min</option>
+          <option value="1">Dnevna - 24h</option>
+          <option value="2">Mesecna</option>
+          <option value="3">Godisnja</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>Cena:</th>
+      <td>{{price}}</td>
+    </tr>
+    <tr class="success">
+      <td colspan="2">
+          <button type="submit" (click)="onSubmit(ticketType.value)">Prikazi</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

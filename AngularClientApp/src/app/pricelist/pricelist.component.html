@@ -31,13 +31,13 @@
 
 <form [formGroup]="addPricelistItemForm" (ngSubmit)="addPricelistItem()">
   <table class="table table-bordered" *ngIf="pricelistAdded">
-      <thread>
+      <thead>
         <tr class="success">
           <th colspan="2">
               Dodajte cene:                    
           </th>
         </tr>
-      </thread>
+      </thead>
       <tbody>
         <tr>
           <td>Vremenska karta:</td>

@@ -10,9 +10,11 @@ import { ActivePricelistModel } from 'src/app/model/activePricelistModel';
   providedIn: 'root'
 })
 export class PricelistSService extends HttpService{
-  //specificUrl = this.url + "api/Pricelist/GetPricelist";
+  specificUrl = this.url + "/api/Pricelist/GetPricelist";
   
-
+  getPrice(ticketType : number) : Observable<any>{
+    return this.http.get<any>(this.specificUrl + '?TicketType=${ticketType}');
+  }
 
   addPricelist(pricelist : AddPricelistModel):Observable<any>{
     let httpOptions = {
@@ -20,7 +22,7 @@ export class PricelistSService extends HttpService{
         "Content-type":"application/json"
       }
     }
-    return this.http.post<any>(this.url+"api/Pricelist/AddPricelist",pricelist,httpOptions);
+    return this.http.post<any>(this.url+"/api/Pricelist/AddPricelist",pricelist,httpOptions);
   }
 
   addPricelistItem(pricelistItem : AddPricelistItemModel):Observable<any>{
@@ -29,7 +31,7 @@ export class PricelistSService extends HttpService{
         "Content-type":"application/json"
       }
     }
-    return this.http.post<any>(this.url+"api/PricelistItem/AddPricelistItem",pricelistItem,httpOptions);
+    return this.http.post<any>(this.url+"/api/PricelistItem/AddPricelistItem",pricelistItem,httpOptions);
   }
 
 }
