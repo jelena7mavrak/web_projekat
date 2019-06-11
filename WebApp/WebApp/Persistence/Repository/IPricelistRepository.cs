@@ -9,5 +9,7 @@ namespace WebApp.Persistence.Repository
 {
     public interface IPricelistRepository : IRepository<Pricelist, int>
     {
+        int GetPricelistIdActive();
+        int AddPricelist(PricelistBindingModel pricelist);
     }
 }

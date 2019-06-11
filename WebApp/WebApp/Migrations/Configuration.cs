@@ -44,10 +44,11 @@ namespace WebApp.Migrations
 
             context.SaveChanges();
 
+            
             /*var pricel = new Pricelist() { Id = 1, InUse = true, StartDate = DateTime.Now, EndDate = new DateTime(2020, 5, 30) };
             context.Pricelists.AddOrUpdate(a => a.Id, pricel);
             context.SaveChanges();
-
+            
             var pricelistItem1 = new PricelistItem() { Id = 1, ItemId = context.Items.Find(i1.Id).Id, PricelistId = context.Pricelists.Find(pricel.Id).Id, Price = 65 };
             var pricelistItem2 = new PricelistItem() { Id = 2, ItemId = context.Items.Find(i2.Id).Id, PricelistId = context.Pricelists.Find(pricel.Id).Id, Price = 300 };
             var pricelistItem3 = new PricelistItem() { Id = 3, ItemId = context.Items.Find(i3.Id).Id, PricelistId = context.Pricelists.Find(pricel.Id).Id, Price = 1000 };

@@ -27,9 +27,9 @@ namespace WebApp.Persistence.UnitOfWork
         [Dependency]
         public IPersonRepository PersonRepository { get; set; }
         [Dependency]
-        public IPricelistItemRepository PricelistItem { get; set; }
+        public IPricelistItemRepository PricelistItemRepository { get; set; }
         [Dependency]
-        public IPricelistRepository Pricelist { get; set; }
+        public IPricelistRepository PricelistRepository { get; set; }
         [Dependency]
         public IRouteRepository RouteRepository { get; set; }
         [Dependency]

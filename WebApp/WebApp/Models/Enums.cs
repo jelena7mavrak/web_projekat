@@ -9,9 +9,9 @@ namespace WebApp.Models
     {
         public enum PassengerType
         {
-            Student,
-            Pensioner,
-            Regular
+            Student =1,
+            Pensioner =2,
+            Regular =3
         }
 
         public enum VerificationType

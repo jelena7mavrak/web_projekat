@@ -34,8 +34,8 @@ namespace WebApp.Models
 
         public bool InUse
         {
-            get => InUse;
-            set => InUse = value;
+            get { return InUse; }
+            set { InUse = value; }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace WebApp.Models
     public class LoginBindingModel
     {
         [Required]
-        [Display(Name ="Username")]
+        [Display(Name = "Username")]
         public string Username { get; set; }
         [Required]
         [Display(Name = "Password")]
@@ -86,6 +86,29 @@ namespace WebApp.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class ActivePricelistBindingModel
+    {
+        [Required]
+        [Display(Name = "StartDate")]
+        public DateTime StartDate { get; set; }
+        [Required]
+        [Display(Name = "EndDate")]
+        public DateTime EndDate { get; set; }
+        [Required]
+        [Display(Name = "HourlyPrice")]
+        public double HourlyPrice { get; set; }
+        [Required]
+        [Display(Name = "DailyPrice")]
+        public double DailyPrice { get; set; }
+        [Required]
+        [Display(Name = "MonthlyPrice")]
+        public double MonthlyPrice { get; set; }
+        [Required]
+        [Display(Name = "AnnualPrice")]
+        public double AnnualPrice { get; set; }
+    }
+
+
     public class RegisterExternalBindingModel
     {
         [Required]
@@ -151,5 +174,35 @@ namespace WebApp.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+    }
+
+    public class PricelistBindingModel
+    {
+        [Required]
+        [Display(Name ="StartDate")]
+        public DateTime StartDate { get; set; }
+
+        [Required]
+        [Display(Name = "EndDate")]
+        public DateTime EndDate { get; set; }
+
+        [Display(Name = "IsActive")]
+        public bool IsActive { get; set; }
+    }
+
+    public class PricelistItemBindingModel
+    {
+        [Required]
+        [Display(Name = "HourlyPrice")]
+        public double HourlyPrice { get; set; }
+        [Required]
+        [Display(Name = "DailyPrice")]
+        public double DailyPrice { get; set; }
+        [Required]
+        [Display(Name = "MonthlyPrice")]
+        public double MonthlyPrice { get; set; }
+        [Required]
+        [Display(Name = "AnnualPrice")]
+        public double AnnualPrice { get; set; }
     }
 }
