@@ -44,18 +44,7 @@ namespace WebApp.Migrations
 
             context.SaveChanges();
 
-            var r1 = new Line { Id = 1, RouteNumber = 4, RouteType = Enums.RouteType.Town, StationId= 10};
-            var r2 = new Line { Id = 2, RouteNumber = 56, RouteType = Enums.RouteType.Suburban, StationId=11 };
-            var r3 = new Line { Id = 3, RouteNumber = 7, RouteType = Enums.RouteType.Town, StationId=12};
-            var r4 = new Line { Id = 4, RouteNumber = 54, RouteType = Enums.RouteType.Suburban , StationId=13};
-            var r5 = new Line { Id = 5, RouteNumber = 11, RouteType = Enums.RouteType.Town, StationId=14 };
-
-            context.Routes.AddOrUpdate(r => r.Id, r1);
-            context.Routes.AddOrUpdate(r => r.Id, r2);
-            context.Routes.AddOrUpdate(r => r.Id, r3);
-            context.Routes.AddOrUpdate(r => r.Id, r4);
-            context.Routes.AddOrUpdate(r => r.Id, r5);
-            context.SaveChanges();
+            
 
             var s1 = new Station { StatioId = 1, Name = "Grbavica", Address = "Puskinova", LineId=1 };
             var s2 = new Station { StatioId = 2, Name = "Liman", Address = "Narodnog fronta", LineId = 3 };
@@ -70,6 +59,19 @@ namespace WebApp.Migrations
             context.Stations.AddOrUpdate(s => s.StatioId, s5);
 
              context.SaveChanges();
+
+            var r1 = new Line { Id = 1, RouteNumber = 4, RouteType = Enums.RouteType.Town, StationId = 1, Stations={s1, s2, s3, s4, s5} };
+            var r2 = new Line { Id = 2, RouteNumber = 56, RouteType = Enums.RouteType.Suburban, StationId = 2, Stations = { s4, s2, s1 } };
+            var r3 = new Line { Id = 3, RouteNumber = 7, RouteType = Enums.RouteType.Town, StationId = 3, Stations = { s1, s2, s3, s4 } };
+            var r4 = new Line { Id = 4, RouteNumber = 54, RouteType = Enums.RouteType.Suburban, StationId = 4, Stations = { s1, s2, s3, s4, s5 } };
+            var r5 = new Line { Id = 5, RouteNumber = 11, RouteType = Enums.RouteType.Town, StationId = 5, Stations = { s3, s4, s5 } };
+
+            context.Routes.AddOrUpdate(r => r.Id, r1);
+            context.Routes.AddOrUpdate(r => r.Id, r2);
+            context.Routes.AddOrUpdate(r => r.Id, r3);
+            context.Routes.AddOrUpdate(r => r.Id, r4);
+            context.Routes.AddOrUpdate(r => r.Id, r5);
+            context.SaveChanges();
 
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {

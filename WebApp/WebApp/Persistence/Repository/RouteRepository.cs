@@ -15,6 +15,19 @@ namespace WebApp.Persistence.Repository
         {
         }
 
+        public string GetStationNames(int lineId)
+        {
+            string s = "";
+            foreach(var l in AppDbContext.Stations)
+            {
+                if (l.LineId == lineId)
+                {
+                    s += "-"+l.Name;
+                }
+            }
+            return s;
+        }
+
         public string GetRoute(Enums.RouteType type)
         {
             string s=" ";
@@ -23,11 +36,8 @@ namespace WebApp.Persistence.Repository
                 if (i.RouteType == type)
                 {
                     
-                    s += "\n" + i.RouteNumber.ToString() + " -";
-
-                    foreach(var station in i.Stations) {
-                        s += " " + station.Name + "-";
-                    }
+                    s += "\n" + i.RouteNumber.ToString();
+                    s+= GetStationNames(i.Id); 
                 }
             }
             return s;

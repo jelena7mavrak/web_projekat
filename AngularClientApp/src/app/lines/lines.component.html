@@ -23,10 +23,13 @@
       </tr>
       <br/>
       <tr>
-        <th colspan="2" *ngif="(routeType =='1'); else elseBlock">
+        <td>
+        {{routeType.value}}
+      </td>
+        <!--<th colspan="2" *ngif="(routeType =='1'); else elseBlock">
            Gradske linije: 
         </th>
-        <ng-template #elseBlock>Prigradske linije: </ng-template>
+        <ng-template #elseBlock>Prigradske linije: </ng-template>-->
         <td colspan="2">
           {{info}}
         </td>
