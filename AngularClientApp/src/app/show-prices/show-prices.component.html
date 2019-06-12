@@ -23,21 +23,21 @@
       <td>{{price}}</td>
     </tr>
     <tr class="success">
-      <td colspan="2">
-          <button type="submit" (click)="onSubmit(ticketType.value)">Prikazi</button>
-      </td>
+      <th>
+          <button type="submit" (click)="ShowPrice(ticketType.value)">Prikazi</button>
+      </th>
+      <th>
+        <button type="submit" (click)="Buy(ticketType.value)">Kupi</button>
+      </th>
     </tr>
     <tr>
-      <td></td><td></td>
-    </tr>
+        <td colspan="2">
+            <label id="lable2" visibility = "hidden" style=" display:none">Karta je kupljena!</label>
+        </td>
+      </tr>
     <tr>
       <td colspan="2">
-        <button type="submit" (click)="onSubmit2(ticketType.value)">Kupi</button>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-          <label id="lable1" visible="false">Neregistrovani korisik moze kupiti samo vremensku kartu</label>
+          <label id="lable1" visibility = "hidden" style=" display:none" >Neregistrovani korisik moze kupiti samo vremensku kartu!</label>
       </td>
     </tr>
   </tbody>

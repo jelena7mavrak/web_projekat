@@ -36,7 +36,16 @@ namespace WebApp.Persistence.Repository
 
         public int GetPricelistIdActive()
         {
-            return AppDbContext.Pricelists.Single(p => p.InUse).Id;
+            int id = -1;
+
+            foreach(var pricelist in AppDbContext.Pricelists )
+            {
+                if(pricelist.InUse == true)
+                {
+                    id = pricelist.Id;
+                }
+            }          
+            return id;   //AppDbContext.Pricelists.Single(p => p.InUse).Id;
         }
     }
 }
