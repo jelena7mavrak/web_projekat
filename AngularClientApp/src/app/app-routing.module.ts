@@ -5,13 +5,15 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { PricelistComponent } from 'src/app/pricelist/pricelist.component';
 import { ShowPricesComponent } from 'src/app/show-prices/show-prices.component';
+import { LinesComponent } from './lines/lines.component';
 
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'addpricelist', component: PricelistComponent},
-  {path: 'pricelist', component: ShowPricesComponent}
+  {path: 'pricelist', component: ShowPricesComponent},
+  {path: 'lines', component: LinesComponent}
 ];
 
 @NgModule({

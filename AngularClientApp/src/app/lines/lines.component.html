@@ -1,0 +1,34 @@
+<table>
+    <thead>
+      <tr>
+        <th colspan="2">
+          Autobuske linije
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Odaberite linije: </td>
+        <td>
+            <select #routeType>
+                 <option value="1">Gradske linije</option>
+                <option value="0">Prigradske linije</option>              
+              </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="submit" (click)="ShowLines(routeType.value)">Prikazi</button>
+        </td>
+      </tr>
+      <br/>
+      <tr>
+        <th colspan="2">
+          {{routeType.value}}: 
+        </th>
+        <td colspan="2">
+          {{info}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
