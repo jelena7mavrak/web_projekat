@@ -10,8 +10,11 @@ namespace WebApp.Models
     public class Schedule
     {
         private int id;
+        private RouteType type;
         private DayType day;
-        private List<Route> route;
+        private Route route;
+        private int routeId;
+        private string departureTime; //vreme polaska
 
         [Key]
         public int Id
@@ -20,21 +23,30 @@ namespace WebApp.Models
             set { id = value; }
         }
 
+        public RouteType Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
         public DayType Day
         {
             get { return day; }
             set { day = value; }
         }
 
-        public List<Route> Route
+        public Route Route
         {
             get { return route; }
             set { route = value; }
         }
 
-        public Schedule()
+        public string DepartureTime
         {
-            Route = new List<Route>();
+            get { return departureTime;}
+            set { departureTime = value; }
         }
+
+        public int RouteId { get => routeId; set => routeId = value; }
     }
 }

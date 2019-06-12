@@ -8,18 +8,16 @@ namespace WebApp.Models
 {
     public class Station
     {
-        private int id;
+        private int stationId;
         private string name;
         private string address;
-        private List<Route> routes;
-        private Location location;
-        private int locationId;
-
+        private Route route;
+        private int routeId;
         [Key]
-        public int Id
+        public int StatioId
         {
-            get { return id; }
-            set { id = value; }
+            get { return stationId; }
+            set { stationId = value; }
         }
 
         public string Name
@@ -34,24 +32,14 @@ namespace WebApp.Models
             set { address = value; }
         }
 
-        public List<Route> Routes
+        public Route Route
         {
-            get { return routes; }
-            set { routes = value; }
+            get { return route; }
+            set { route = value; }
 
         }
 
-        public Location Location
-        {
-            get { return location; }
-            set { location = value; }
-        }
+        public int RouteId { get => routeId; set => routeId = value; }
 
-        public int LocationId { get => locationId; set => locationId = value; }
-
-        public Station()
-        {
-            Routes = new List<Route>();
-        }
     }
 }

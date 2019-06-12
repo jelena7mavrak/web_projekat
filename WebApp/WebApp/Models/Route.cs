@@ -12,6 +12,7 @@ namespace WebApp.Models
         private int id;
         private int routeNumber;
         private List<Station> stations;
+        private int stationId;
         private RouteType routeType;
 
         [Key]
@@ -19,6 +20,12 @@ namespace WebApp.Models
         {
             get { return id; }
             set { id = value; }
+        }
+
+        public int StationId
+        {
+            get { return stationId; }
+            set { stationId = value; }
         }
 
         public int RouteNumber
