@@ -19,7 +19,7 @@ namespace WebApp.Persistence
        // public DbSet<Person> Persons { get; set; }
         public DbSet<PricelistItem> PricelistItems { get; set; }
         public DbSet<Pricelist> Pricelists { get; set; }
-        public DbSet<Route> Routes { get; set; }
+        public DbSet<Line> Routes { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Station> Stations { get; set; }
         public DbSet<Ticket> Tickets { get; set; }

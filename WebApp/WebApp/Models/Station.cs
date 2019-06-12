@@ -11,8 +11,8 @@ namespace WebApp.Models
         private int stationId;
         private string name;
         private string address;
-        private Route route;
-        private int routeId;
+        private Line line;
+        private int lineId;
         [Key]
         public int StatioId
         {
@@ -32,14 +32,14 @@ namespace WebApp.Models
             set { address = value; }
         }
 
-        public Route Route
+        public Line Line
         {
-            get { return route; }
-            set { route = value; }
+            get { return line; }
+            set { line = value; }
 
         }
 
-        public int RouteId { get => routeId; set => routeId = value; }
+        public int LineId { get => lineId; set => lineId = value; }
 
     }
 }

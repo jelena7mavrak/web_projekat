@@ -7,7 +7,7 @@ using static WebApp.Models.Enums;
 
 namespace WebApp.Models
 {
-    public class Route
+    public class Line
     {
         private int id;
         private int routeNumber;
@@ -47,7 +47,7 @@ namespace WebApp.Models
             set { routeType = value; }
         }
 
-        public Route()
+        public Line()
         {
             Stations = new List<Station>();
         }

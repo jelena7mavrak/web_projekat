@@ -12,8 +12,8 @@ namespace WebApp.Models
         private int id;
         private RouteType type;
         private DayType day;
-        private Route route;
-        private int routeId;
+        private Line line;
+        private int lineId;
         private string departureTime; //vreme polaska
 
         [Key]
@@ -35,10 +35,10 @@ namespace WebApp.Models
             set { day = value; }
         }
 
-        public Route Route
+        public Line Line
         {
-            get { return route; }
-            set { route = value; }
+            get { return line; }
+            set { line = value; }
         }
 
         public string DepartureTime
@@ -47,6 +47,6 @@ namespace WebApp.Models
             set { departureTime = value; }
         }
 
-        public int RouteId { get => routeId; set => routeId = value; }
+        public int LineId { get => lineId; set => lineId = value; }
     }
 }

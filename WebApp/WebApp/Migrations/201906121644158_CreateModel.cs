@@ -66,7 +66,7 @@ namespace WebApp.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Routes",
+                "dbo.Lines",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -83,11 +83,11 @@ namespace WebApp.Migrations
                         StatioId = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Address = c.String(),
-                        RouteId = c.Int(nullable: false),
+                        LineId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.StatioId)
-                .ForeignKey("dbo.Routes", t => t.RouteId, cascadeDelete: true)
-                .Index(t => t.RouteId);
+                .ForeignKey("dbo.Lines", t => t.LineId, cascadeDelete: true)
+                .Index(t => t.LineId);
             
             CreateTable(
                 "dbo.Schedules",
@@ -97,11 +97,11 @@ namespace WebApp.Migrations
                         Type = c.Int(nullable: false),
                         Day = c.Int(nullable: false),
                         DepartureTime = c.String(),
-                        RouteId = c.Int(nullable: false),
+                        LineId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Routes", t => t.RouteId, cascadeDelete: true)
-                .Index(t => t.RouteId);
+                .ForeignKey("dbo.Lines", t => t.LineId, cascadeDelete: true)
+                .Index(t => t.LineId);
             
             CreateTable(
                 "dbo.Tickets",
@@ -126,13 +126,13 @@ namespace WebApp.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Schedules", "RouteId", "dbo.Routes");
-            DropForeignKey("dbo.Stations", "RouteId", "dbo.Routes");
+            DropForeignKey("dbo.Schedules", "LineId", "dbo.Lines");
+            DropForeignKey("dbo.Stations", "LineId", "dbo.Lines");
             DropForeignKey("dbo.PricelistItems", "PricelistId", "dbo.Pricelists");
             DropForeignKey("dbo.PricelistItems", "ItemId", "dbo.Items");
             DropForeignKey("dbo.PricelistItems", "Coefficient_Id", "dbo.Coefficients");
-            DropIndex("dbo.Schedules", new[] { "RouteId" });
-            DropIndex("dbo.Stations", new[] { "RouteId" });
+            DropIndex("dbo.Schedules", new[] { "LineId" });
+            DropIndex("dbo.Stations", new[] { "LineId" });
             DropIndex("dbo.PricelistItems", new[] { "Coefficient_Id" });
             DropIndex("dbo.PricelistItems", new[] { "PricelistId" });
             DropIndex("dbo.PricelistItems", new[] { "ItemId" });
@@ -147,7 +147,7 @@ namespace WebApp.Migrations
             DropTable("dbo.Tickets");
             DropTable("dbo.Schedules");
             DropTable("dbo.Stations");
-            DropTable("dbo.Routes");
+            DropTable("dbo.Lines");
             DropTable("dbo.Pricelists");
             DropTable("dbo.PricelistItems");
             DropTable("dbo.Locations");
