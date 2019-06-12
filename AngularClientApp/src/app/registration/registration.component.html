@@ -1,82 +1,68 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <table> 
-        <thead>
-            <tr class=success>
-                <th colspan="2">
-                    Registration
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr id="upozorenje" class="hidden">
-               <td colspan="2" hidden="hidden">GRESKA: Koriscnicko ime vec postoji, izaberite drugo!</td>
-            </tr>
-            <tr>
-                <th>Name: </th>
-                <td>
-                    <input type="text" formControlName="Name" placeholder="Name..." required />
-                </td>
-            </tr>
-            <tr>
-                <th>Lastname: </th>
-                <td>
-                    <input type="text" formControlName="LastName" placeholder="Lastname..." required />
-                </td>
-            </tr>
-            <tr>
-                <th>Username: </th>
-                <td>
-                    <input type="text" formControlName="UserName" placeholder="Username..." required />
-                </td>
-            </tr>
-            <tr>
-                <th>Email: </th>
-                <td>
-                    <input type="text" formControlName="Email" placeholder="Email..." required/>
-                </td>
-            </tr>
-            <tr>
-                <th>Address: </th>
-                <td>
-                    <input type="text" formControlName="Address" placeholder="Address..."/>
-                </td>
-            </tr>
-            <tr>
-                <th>Birthday date: </th>
-                <td>
-                    <input type="text" formControlName="BirthdayDate" placeholder="Birthday date..."/>
-                </td>
-            </tr>
-            <tr>
-                <th>Passenger Type: </th>
-                <td>
-                   <!--- <select>
-                        <option name="PassengerType" formContorlName="PassengerType" value="3">Regular</option>
-                        <option name="PassengerType" formContorlName="PassengerType" value="1">Student</option>
-                        <option name="PassengerType" formContorlName="PassengerType" value="2">Pensioner</option>
-                    </select> -->
-                    <input type="radio" name="PassengerType" formContorlName="PassengerType" value="3" checked="checked">Regular<br>
-                    <input type="radio" name="PassengerType" formContorlName="PassengerType" value="1">Student<br>
-                    <input type="radio" name="PassengerType" formContorlName="PassengerType" value="2">Pensioner<br>
-                </td>
-            </tr>
-            <tr>
-                <th>Password: </th>
-                <td>
-                    <input type="password" formControlName="Password" placeholder="Password..." required/>
-                </td>
-            </tr>
-            <tr>
-                <th>Confirm Password: </th>
-                <td>
-                    <input type="password" formControlName="ConfirmPassword" placeholder="Confirm Password..." required/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button class="btn btn-success pull-right" type="submit">Register</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <h1 style="text-align:center">Registration</h1>
+    <label>
+      <p class="label-txt">Name:</p>
+      <input type="text" formControlName="Name" class="input" required />
+        <div class="line-box">
+         <div class="line"></div>
+        </div>
+    </label>
+    <label>
+      <p class="label-txt">Lastname:</p>
+      <input type="text" formControlName="LastName" class="input" required />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+    <label>
+      <p class="label-txt">Username:</p>
+      <input type="text" formControlName="UserName" class="input" required />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+    <label>
+      <p class="label-txt">Email:</p>
+      <input type="text" formControlName="Email" class="input" required />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+    <label>
+      <p class="label-txt">Address:</p>
+      <input type="text" formControlName="Address" class="input" required />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+    <label>
+      <p class="label-txt">Birthday Date:</p>
+      <input type="text" formControlName="BirthdayDate" class="input" required />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+    <label>
+      <p class="label-txt">Passenger Type:</p>
+      <select>
+        <option name="PassengerType" formContorlName="PassengerType" value="3">Regular</option>
+        <option name="PassengerType" formContorlName="PassengerType" value="1">Student</option>
+        <option name="PassengerType" formContorlName="PassengerType" value="2">Pensioner</option>
+    </select>
+    </label>
+    <label>
+      <p class="label-txt">Password:</p>
+      <input type="password" formControlName="Password" class="input" required />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+    <label>
+      <p class="label-txt">ConfirmPassword:</p>
+      <input type="password" formControlName="ConfirmPassword" class="input" required />
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+    </label>
+      <button class="btn btn-success pull-right" type="submit">Register</button>
 </form>

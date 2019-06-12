@@ -22,7 +22,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        [Route("BuyTicket")]
+        [Route("BuyTicket/{type}")]
         public IHttpActionResult BuyTicket(TicketType type)
         {
             
