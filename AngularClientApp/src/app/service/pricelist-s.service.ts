@@ -26,7 +26,7 @@ export class PricelistSService extends HttpService{
         "Content-type":"application/json"
       }
     }
-    return this.http.post<any>(this.url+"/api/Pricelist/AddPricelist",pricelist,httpOptions);
+    return this.http.post<any>(this.url + "/api/Pricelist/AddPricelist", pricelist, httpOptions);
   }
 
   addPricelistItem(pricelistItem : AddPricelistItemModel):Observable<any>{
@@ -35,7 +35,20 @@ export class PricelistSService extends HttpService{
         "Content-type":"application/json"
       }
     }
-    return this.http.post<any>(this.url+"/api/PricelistItem/AddPricelistItem",pricelistItem,httpOptions);
+    return this.http.post<any>(this.url + "/api/PricelistItem/AddPricelistItem", pricelistItem, httpOptions);
+  }
+
+  getActivePricelist() : Observable<any> {
+    return this.http.get<any>(this.url + "/api/PricelistItem/GetActivePricelist");
+  }
+
+  editPricelist(pricelist : ActivePricelistModel) : Observable<any>{
+    let httpOptions = {
+      headers:{
+        "Content-type":"application/json"
+      }
+    }
+    return this.http.post<any>(this.url + "/api/PricelistItem/UpdatePricelist", pricelist, httpOptions);
   }
 
 }

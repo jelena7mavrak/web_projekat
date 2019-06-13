@@ -16,6 +16,7 @@ import { ShowPricesComponent } from './show-prices/show-prices.component';
 import { PricelistSService } from 'src/app/service/pricelist-s.service';
 import { LinesComponent } from './lines/lines.component';
 import { LineSService } from 'src/app/service/line-s.service';
+import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LineSService } from 'src/app/service/line-s.service';
     NavbarComponent,
     PricelistComponent,
     ShowPricesComponent,
-    LinesComponent
+    LinesComponent,
+    EditPricelistComponent
   ],
   imports: [
     BrowserModule,
