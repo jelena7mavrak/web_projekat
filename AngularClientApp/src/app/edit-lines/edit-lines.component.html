@@ -1,3 +1,4 @@
+<form>
 <select #lineNumber (change)='onSelectionChanged($event)'>
   <option>         </option>
   <option *ngFor='let lineNum of lines' [value]="lineNum">{{lineNum}}</option>
@@ -20,13 +21,13 @@
       <tr>
         <td>Broj linije: </td>
         <td>
-            <input type="text" [(ngModel)]="lineData.RouteNumber" value="{{lineData.RouteNumber}}" required>
+            <input type="text" [(ngModel)]="lineData.RouteNumber" [ngModelOptions]="{standalone: true}" value="{{lineData.RouteNumber}}" required>
         </td>
       </tr>
       <tr>
         <td>Linija: </td>
         <td>
-          <select [(ngModel)]="lineData.RouteType" [value]="lineData.RouteType">
+          <select [(ngModel)]="lineData.RouteType" [ngModelOptions]="{standalone: true}" [value]="lineData.RouteType">
             <option value="1">Gradska</option>
             <option value="0">Prigradska</option>
           </select>
@@ -42,3 +43,4 @@
       </tr>
   </tbody>
 </table>
+</form>

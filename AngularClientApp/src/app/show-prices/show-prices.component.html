@@ -1,34 +1,22 @@
-<table class="table table-boredered">
-  <thead>
-    <tr class="success">
-      <th colspan="2">
-          Cenovnik
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Izaberite kartu: </td>
-      <td>
+<form>
+    <h2 style="text-align:center">Cenovnik</h2>
+    <label>
+      <p class="label-txt">Odaberite kartu:   </p>
         <select #ticketType>
           <option value="0">Vremenska - 60 min</option>
           <option value="1">Dnevna</option>
           <option value="2">Mesecna</option>
           <option value="3">Godisnja</option>
         </select>
-      </td>
-    </tr>
-    <tr>
-      <th>Cena:</th>
-      <td>{{price}}</td>
-    </tr>
-    <tr class="success">
-      <th>
+      </label>
+    <label>
+      <p class="label-txt">Cena:</p>   
+     <p>{{price}}</p> 
+    </label>
+    <label>
           <button type="submit" (click)="ShowPrice(ticketType.value)">Prikazi</button>
-      </th>
-      <th>
-        <button type="submit" (click)="Buy(ticketType.value)">Kupi</button>
-      </th>
-    </tr>
-  </tbody>
-</table>
+    </label>
+    <label>   
+          <button type="submit" (click)="Buy(ticketType.value)">Kupi</button>
+    </label>
+</form>

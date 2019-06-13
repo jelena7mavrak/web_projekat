@@ -1,42 +1,22 @@
-<table>
-    <thead>
-      <tr>
-        <th colspan="2">
-          Autobuske linije
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Odaberite linije: </td>
-        <td>
-            <select #routeType>
+<form>
+  <h2 style="text-align:center">Autobuske linije</h2>
+    <label>
+        <p class="label-txt">Odaberite linije:   </p>
+          <select #routeType>
                 <option value="2"></option>
                 <option value="1">Gradske linije</option>
                 <option value="0">Prigradske linije</option>              
-              </select>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
+          </select>
+      </label>
+        <label>
           <button type="submit" (click)="ShowLines(routeType.value)">Prikazi</button>
-        </td>
-      </tr>
-
+      </label>
       <br/>
-      
-      <tr>
-        <td colspan="2">
+      <label>
             <ng-template [ngIf]="routeType.value== 0"><div><u> Prigradske linije: </u></div></ng-template>
             <ng-template [ngIf]="routeType.value== 1"><div><u> Gradske linije: </u></div></ng-template>
-        </td>
-        <td colspan="2">
-        </td>
-      </tr>
-      <tr>
-          <td colspan="2">
+      </label>
+      <label>
               {{info}}
-            </td>
-      </tr>
-    </tbody>
-  </table>
+        </label>
+  </form>

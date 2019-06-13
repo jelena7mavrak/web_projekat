@@ -1,62 +1,52 @@
-<table *ngIf="activePricelist != undefined" class="table table-bordered">
-    <thead>
-        <tr class="success">
-            <th colspan="2">
-                Izmenite cenovnik                   
-            </th>
-        </tr>
-    </thead>         
-    <tbody> 
-      <tr>
-        <th colspan="2">
-          Izmenite vreme trajanja cenovnika koji je u upotrebi: 
-        </th>
-      </tr>             
-         <tr>
-                <td>Pocetak:</td>
-                <td>
-                    <input type="text" [(ngModel)]="activePricelist.StartDate" value="{{activePricelist.StartDate}}" (change)="onChange($event)" required>
-                </td>
-         </tr>
-         <tr>
-                <td>Kraj:</td>
-                <td>
-                   <input type="text" [(ngModel)]="activePricelist.EndDate" value="{{activePricelist.EndDate}}" (change)="onChange($event)" required>
-                 </td>
-         </tr>
-         <tr>
-           <th colspan="2">
-             Izmenite vrednosti cena karata:
-           </th>
-         </tr>
-         <tr>
-             <td>Cena vremenske karte: </td>
-             <td>
-                 <input type="text" [(ngModel)]="activePricelist.HourlyPrice" value="{{activePricelist.HourlyPrice}}" (change)="onChange($event)" required>
-             </td>
-         </tr>
-         <tr>
-             <td>Cena dnevne karte:</td>
-             <td>
-                 <input type="text" [(ngModel)]="activePricelist.DailyPrice" value="{{activePricelist.DailyPrice}}" (change)="onChange($event)" required>
-             </td>
-         </tr>
-         <tr>
-            <td>Cena mesecne karte:</td>
-            <td>
-                <input type="text" [(ngModel)]="activePricelist.MonthlyPrice" value="{{activePricelist.MonthlyPrice}}" (change)="onChange($event)" required>
-            </td>
-        </tr>
-        <tr>
-            <td>Cena godisnje karte:</td>
-            <td>
-                <input type="text" [(ngModel)]="activePricelist.AnnualPrice" value="{{activePricelist.AnnualPrice}}" (change)="onChange($event)" required>
-            </td>
-        </tr>
-        <tr>
-              <td colspan="2">
-                    <button type="submit"  (click)="changePricelist()">Izmeni</button>
-              </td>
-        </tr>
-  </tbody>    
-</table>
+<form *ngIf="activePricelist != undefined" class="table table-bordered">
+    <h2 style="text-align:center">Izmenite cenovnik</h2>
+      <label>
+        <p class="label-txt">Izmenite vreme trajanja cenovnika koji je u upotrebi: </p>
+        </label><br/>       
+         <label>
+            <p class="label-txt">Pocetak: </p>
+                <input type="text" class="input" [ngModelOptions]="{standalone: true}" [(ngModel)]="activePricelist.StartDate" value="{{activePricelist.StartDate}}" (change)="onChange($event)" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+        </label>
+        <label>
+            <p class="label-txt">Kraj: </p>
+                <input type="text" class="input"  [(ngModel)]="activePricelist.EndDate" [ngModelOptions]="{standalone: true}" value="{{activePricelist.EndDate}}" (change)="onChange($event)" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+        </label>
+        <label>
+            <p class="label-txt">Izmenite vrednosti cena karata: </p>
+        </label><br/>
+        <label>
+            <p class="label-txt">Cena vremenske karte: </p> 
+                <input type="text" class="input" [(ngModel)]="activePricelist.HourlyPrice" [ngModelOptions]="{standalone: true}" value="{{activePricelist.HourlyPrice}}" (change)="onChange($event)" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+        </label>
+         <label>
+            <p class="label-txt">Cena dnevne karte: </p> 
+                 <input type="text" class="input" [(ngModel)]="activePricelist.DailyPrice" [ngModelOptions]="{standalone: true}" value="{{activePricelist.DailyPrice}}" (change)="onChange($event)" required>
+                 <div class="line-box">
+                    <div class="line"></div>
+                </div>
+        </label>
+         <label>
+            <p class="label-txt">Cena dnevne karte: </p> 
+                <input type="text" class="input" [(ngModel)]="activePricelist.MonthlyPrice" [ngModelOptions]="{standalone: true}" value="{{activePricelist.MonthlyPrice}}" (change)="onChange($event)" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+        </label>
+        <label>
+            <p class="label-txt">Cena godisnje karte: </p> 
+                <input type="text" class="input" [(ngModel)]="activePricelist.AnnualPrice" [ngModelOptions]="{standalone: true}" value="{{activePricelist.AnnualPrice}}" (change)="onChange($event)" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+        </label>
+        <button type="submit"  (click)="changePricelist()">Izmeni</button>
+</form>
