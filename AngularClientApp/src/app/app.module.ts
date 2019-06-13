@@ -20,6 +20,7 @@ import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.componen
 import { SchedulesComponent } from 'src/app/schedules/schedules.component';
 import { ScheduleService } from 'src/app/service/schedule.service';
 import { EditLinesComponent } from './edit-lines/edit-lines.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { EditLinesComponent } from './edit-lines/edit-lines.component';
     LinesComponent,
     EditPricelistComponent, 
     SchedulesComponent, 
-    EditLinesComponent
+    EditLinesComponent, AdminComponent
   ],
   imports: [
     BrowserModule,

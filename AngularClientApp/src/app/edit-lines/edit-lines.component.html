@@ -1,5 +1,5 @@
 <select #lineNumber (change)='onSelectionChanged($event)'>
-  <option></option>
+  <option>         </option>
   <option *ngFor='let lineNum of lines' [value]="lineNum">{{lineNum}}</option>
 </select>
 <table *ngIf="lineData">
@@ -20,7 +20,7 @@
       <tr>
         <td>Broj linije: </td>
         <td>
-            <input type="text" [(ngModel)]="lineData.Number" value="{{lineData.Number}}" required>
+            <input type="text" [(ngModel)]="lineData.RouteNumber" value="{{lineData.RouteNumber}}" required>
         </td>
       </tr>
       <tr>

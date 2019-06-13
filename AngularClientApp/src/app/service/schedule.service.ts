@@ -17,12 +17,12 @@ export class ScheduleService extends HttpService{
   }
 
   getAllLines() : Observable<string[]>{      
-    return this.http.get<string[]>(this.url + "api/Schedule/GetAllLines");
+    return this.http.get<string[]>(this.url + "/api/Schedule/GetAllLines");
   }
 
   getLineDetails(lineNumber: string) : Observable<LineModel>
   {
-    return this.http.get<LineModel>(this.url + "api/Schedule/GetLineData/" + lineNumber);
+    return this.http.get<LineModel>(this.url + "/api/Schedule/GetLineData/" + lineNumber);
   }
 
 

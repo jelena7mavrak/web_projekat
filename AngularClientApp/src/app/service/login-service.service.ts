@@ -17,7 +17,7 @@ export class LoginServiceService extends HttpService {
         "Content-type":"application/json"
       }
     }
-   
+    //let params = `username=${data.UserName}&password=${data.Password}&grant_type=password`;
     return this.http.post(this.specificUrl, data, httpOptions);
   }
 }

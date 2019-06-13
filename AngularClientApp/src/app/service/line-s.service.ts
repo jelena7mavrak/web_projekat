@@ -13,11 +13,11 @@ export class LineSService extends HttpService {
   }
 
   updateLine(lineData: LineModel) : Observable<any>{
-    return this.http.post(this.url + "api/Line/UpdateLine", lineData);
+    return this.http.post(this.url + "/api/Route/UpdateLine", lineData);
   }
 
   removeLineById(lineId: number) : Observable<any>
   {
-    return this.http.delete(this.url + "api/Line/RemoveLine/" + lineId);
+    return this.http.delete(this.url + "/api/Route/RemoveLine/" + lineId);
   }
 }

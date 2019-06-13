@@ -24,20 +24,10 @@ export class ShowPricesComponent implements OnInit {
   }
 
   Buy(ticketType : number){
-
-    if(ticketType!=0)
-    { 
-      var obj = document.getElementById("label1");
-      obj.style.display = "inline";
-      obj.style.visibility = "visible";
-    }
-    else{ 
       this.pricelistSservice.buyTicket(ticketType).subscribe(data => {
         console.log('Ticket successfully bought!');
     });
-    var obj2 = document.getElementById("label2");
-      obj2.style.display = "inline";
-      obj2.style.visibility = "visible";
-    }
+  
+    
   }
 }

@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using WebApp.Models;
 using WebApp.Persistence.UnitOfWork;
 using static WebApp.Models.Enums;
 
@@ -31,5 +32,38 @@ namespace WebApp.Controllers
             return Ok(station);
             
         }
+
+        [HttpPost]
+        [Route("UpdateLine")]
+        public IHttpActionResult UpdateLine(LineBindingModel updateLine)
+        {
+
+            if (unitOfWork.RouteRepository.UpdateLine(updateLine))
+            {
+                return Ok("Line updated");
+            }
+            else
+            {
+                return BadRequest("Error...");
+            }
+
+        }
+
+        [HttpDelete]
+        [Route("RemoveLine/{lineId}")]
+        public IHttpActionResult RemoveLine(int lineId)
+        {
+
+            if (unitOfWork.RouteRepository.RemoveLine(lineId))
+            {
+                return Ok("Line removed");
+            }
+            else
+            {
+                return BadRequest("Error...");
+            }
+
+        }
+        
     }
 }

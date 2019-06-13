@@ -108,7 +108,21 @@ namespace WebApp.Models
         public double AnnualPrice { get; set; }
     }
 
+    public class LineBindingModel
+    {
+        [Required]
+        [Display(Name = "Id")]
+        public int Id { get; set; }
 
+        [Required]
+        [Display(Name = "RouteNumber")]
+        public int RouteNumber { get; set; }
+
+        [Required]
+        [Display(Name = "RouteType")]
+        public RouteType RouteType { get; set; }
+
+    }
     public class RegisterExternalBindingModel
     {
         [Required]

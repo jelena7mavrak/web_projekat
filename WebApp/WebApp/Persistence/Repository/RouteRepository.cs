@@ -61,5 +61,60 @@ namespace WebApp.Persistence.Repository
             }
             return retVal;
         }
+
+        public bool UpdateLine(LineBindingModel line)
+        {
+            foreach (Line l in AppDbContext.Routes.ToList())
+            {
+
+                if (l.Id == line.Id)
+                {
+                    l.RouteNumber = line.RouteNumber;
+                    l.RouteType = line.RouteType;
+
+                    AppDbContext.SaveChanges();
+
+
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+        public bool RemoveLine(int lineId)
+        {
+            try
+            {
+                Line removeL = AppDbContext.Routes.Single(l => l.Id == lineId);
+
+                AppDbContext.Routes.Remove(removeL);
+                AppDbContext.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+
+
+            }
+        }
+
+        public Line GetLineByLineNumber(int lineNumber)
+        {
+            return AppDbContext.Routes.FirstOrDefault(line => line.RouteNumber == lineNumber);
+        }
+
+        public List<int> GetAllLines()
+        {
+            List<int> ret = new List<int>();
+
+            foreach (var item in AppDbContext.Routes.ToList())
+            {
+                ret.Add(item.RouteNumber);
+            }
+
+            return ret;
+        }
     }
 }

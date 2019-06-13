@@ -13,5 +13,9 @@ namespace WebApp.Persistence.Repository
     {
         string GetRoute(RouteType type);
         List<string> GetRouteS(RouteType type);
+        bool UpdateLine(LineBindingModel line);
+        bool RemoveLine(int lineId);
+        List<int> GetAllLines();
+        Line GetLineByLineNumber(int lineNumber);
     }
 }

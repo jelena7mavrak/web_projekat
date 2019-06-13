@@ -9,6 +9,7 @@ import { LinesComponent } from './lines/lines.component';
 import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.component';
 import { SchedulesComponent } from 'src/app/schedules/schedules.component';
 import { EditLinesComponent } from './edit-lines/edit-lines.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'editpricelist', component: EditPricelistComponent},
   {path: 'schedules', component: SchedulesComponent},
   {path: 'editlines', component: EditLinesComponent},
+  {path: 'admin', component: AdminComponent},
 ];
 
 @NgModule({
