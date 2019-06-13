@@ -1,21 +1,21 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <h1 style="text-align:center">Registration</h1>
+  <h1 style="text-align:center">Registracija</h1>
     <label>
-      <p class="label-txt">Name:</p>
+      <p class="label-txt">Ime:  </p>
       <input type="text" formControlName="Name" class="input" required />
         <div class="line-box">
          <div class="line"></div>
         </div>
     </label>
     <label>
-      <p class="label-txt">Lastname:</p>
+      <p class="label-txt">Prezime:</p>
       <input type="text" formControlName="LastName" class="input" required />
         <div class="line-box">
           <div class="line"></div>
         </div>
     </label>
     <label>
-      <p class="label-txt">Username:</p>
+      <p class="label-txt">Korisnicko ime:</p>
       <input type="text" formControlName="UserName" class="input" required />
         <div class="line-box">
           <div class="line"></div>
@@ -29,21 +29,21 @@
         </div>
     </label>
     <label>
-      <p class="label-txt">Address:</p>
+      <p class="label-txt">Adresa:</p>
       <input type="text" formControlName="Address" class="input" required />
         <div class="line-box">
           <div class="line"></div>
         </div>
     </label>
     <label>
-      <p class="label-txt">Birthday Date:</p>
+      <p class="label-txt">Datum rodjenja:</p>
       <input type="text" formControlName="BirthdayDate" class="input" required />
         <div class="line-box">
           <div class="line"></div>
         </div>
     </label>
     <label>
-      <p class="label-txt">Passenger Type:</p>
+      <p class="label-txt"> Tip putnika: </p>
       <select>
         <option name="PassengerType" formContorlName="PassengerType" value="3">Regular</option>
         <option name="PassengerType" formContorlName="PassengerType" value="1">Student</option>
@@ -51,18 +51,18 @@
     </select>
     </label>
     <label>
-      <p class="label-txt">Password:</p>
+      <p class="label-txt">Lozinka:</p>
       <input type="password" formControlName="Password" class="input" required />
         <div class="line-box">
           <div class="line"></div>
         </div>
     </label>
     <label>
-      <p class="label-txt">ConfirmPassword:</p>
+      <p class="label-txt">Potvrdi lozniku:</p>
       <input type="password" formControlName="ConfirmPassword" class="input" required />
         <div class="line-box">
           <div class="line"></div>
         </div>
     </label>
-      <button class="btn btn-success pull-right" type="submit">Register</button>
+      <button class="btn btn-success pull-right" type="submit">Registruj se</button>
 </form>

@@ -1,0 +1,44 @@
+<select #lineNumber (change)='onSelectionChanged($event)'>
+  <option></option>
+  <option *ngFor='let lineNum of lines' [value]="lineNum">{{lineNum}}</option>
+</select>
+<table *ngIf="lineData">
+  <thead>
+      <tr class="success">
+          <th colspan="2">
+              Informacije o izabranoj liniji:                     
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ID linije: </td>
+          <td>
+            <label>{{lineData.Id}}</label>
+          </td>
+      </tr>
+      <tr>
+        <td>Broj linije: </td>
+        <td>
+            <input type="text" [(ngModel)]="lineData.Number" value="{{lineData.Number}}" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Linija: </td>
+        <td>
+          <select [(ngModel)]="lineData.RouteType" [value]="lineData.RouteType">
+            <option value="1">Gradska</option>
+            <option value="0">Prigradska</option>
+          </select>
+        </td>
+    </tr>
+      <tr>
+          <td>
+              <button class="btn btn-danger pull-left" (click)="removeLine()">Obrisi liniju</button>
+          </td>
+          <td>
+                <button class="btn btn-success pull-right" (click)="onSubmit()">Sacuvaj promene</button>
+          </td>
+      </tr>
+  </tbody>
+</table>

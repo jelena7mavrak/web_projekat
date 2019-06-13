@@ -8,7 +8,7 @@ import { ShowPricesComponent } from 'src/app/show-prices/show-prices.component';
 import { LinesComponent } from './lines/lines.component';
 import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.component';
 import { SchedulesComponent } from 'src/app/schedules/schedules.component';
-
+import { EditLinesComponent } from './edit-lines/edit-lines.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -18,6 +18,7 @@ const routes: Routes = [
   {path: 'lines', component: LinesComponent},
   {path: 'editpricelist', component: EditPricelistComponent},
   {path: 'schedules', component: SchedulesComponent},
+  {path: 'editlines', component: EditLinesComponent},
 ];
 
 @NgModule({

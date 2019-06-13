@@ -19,7 +19,7 @@ import { LineSService } from 'src/app/service/line-s.service';
 import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.component';
 import { SchedulesComponent } from 'src/app/schedules/schedules.component';
 import { ScheduleService } from 'src/app/service/schedule.service';
-
+import { EditLinesComponent } from './edit-lines/edit-lines.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { ScheduleService } from 'src/app/service/schedule.service';
     ShowPricesComponent,
     LinesComponent,
     EditPricelistComponent, 
-    SchedulesComponent
+    SchedulesComponent, 
+    EditLinesComponent
   ],
   imports: [
     BrowserModule,

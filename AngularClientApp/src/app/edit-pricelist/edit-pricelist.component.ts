@@ -10,8 +10,7 @@ import { PricelistSService } from 'src/app/service/pricelist-s.service';
 export class EditPricelistComponent implements OnInit {
 
   activePricelist : ActivePricelistModel;
-  changed : boolean=false;
-
+  
   constructor(private PricelistSService : PricelistSService) { }
 
   ngOnInit() {
@@ -19,10 +18,6 @@ export class EditPricelistComponent implements OnInit {
       data=>{
           this.activePricelist = data;
     });
-  }
-
-  onChange(event){
-    this.changed = true;
   }
 
   changePricelist(){
