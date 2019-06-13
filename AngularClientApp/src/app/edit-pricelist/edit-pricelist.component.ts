@@ -9,15 +9,15 @@ import { PricelistSService } from 'src/app/service/pricelist-s.service';
 })
 export class EditPricelistComponent implements OnInit {
 
-  pricelist : ActivePricelistModel;
-  changed : boolean;
+  activePricelist : ActivePricelistModel;
+  changed : boolean=false;
 
   constructor(private PricelistSService : PricelistSService) { }
 
   ngOnInit() {
     this.PricelistSService.getActivePricelist().subscribe(
       data=>{
-          this.pricelist = data;
+          this.activePricelist = data;
     });
   }
 
@@ -25,9 +25,9 @@ export class EditPricelistComponent implements OnInit {
     this.changed = true;
   }
 
-  updatePricelist(){
-    console.log(this.pricelist);
-    this.PricelistSService.editPricelist(this.pricelist).subscribe(
+  changePricelist(){
+    console.log(this.activePricelist);
+    this.PricelistSService.editPricelist(this.activePricelist).subscribe(
       result => console.log('Pricelist changed!'),
       error => console.log('Error: Pricelist can not change!')
     );

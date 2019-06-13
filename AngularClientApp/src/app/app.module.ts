@@ -17,6 +17,9 @@ import { PricelistSService } from 'src/app/service/pricelist-s.service';
 import { LinesComponent } from './lines/lines.component';
 import { LineSService } from 'src/app/service/line-s.service';
 import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.component';
+import { SchedulesComponent } from 'src/app/schedules/schedules.component';
+import { ScheduleService } from 'src/app/service/schedule.service';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.componen
     PricelistComponent,
     ShowPricesComponent,
     LinesComponent,
-    EditPricelistComponent
+    EditPricelistComponent, 
+    SchedulesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,7 @@ import { EditPricelistComponent } from './edit-pricelist/edit-pricelist.componen
     AppRoutingModule, 
     FormsModule
   ],
-  providers: [HttpService, LoginServiceService,  RegistrationService, PricelistSService, LineSService],
+  providers: [HttpService, LoginServiceService,  RegistrationService, PricelistSService, LineSService, ScheduleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

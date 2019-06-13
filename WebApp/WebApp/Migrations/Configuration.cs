@@ -73,6 +73,19 @@ namespace WebApp.Migrations
             context.Routes.AddOrUpdate(r => r.Id, r5);
             context.SaveChanges();
 
+            var sc1 = new Schedule { Id = 1, Day = Enums.DayType.Saturday, Type = Enums.RouteType.Suburban, LineId = 1, DepartureTime = "07-07:10|07:45-08:00|08:45-09:00" };
+            var sc2 = new Schedule { Id = 2, Day = Enums.DayType.Workday, Type = Enums.RouteType.Town, LineId = 2, DepartureTime = "10:15-10:45|10:30-11:00" };
+            var sc3 = new Schedule { Id = 3, Day = Enums.DayType.Sunday, Type = Enums.RouteType.Suburban, LineId = 3, DepartureTime = "14-14:10|15:15-16:05" };
+            var sc4 = new Schedule { Id = 4, Day = Enums.DayType.Workday, Type = Enums.RouteType.Suburban, LineId = 4, DepartureTime = "17-17:10|17:15-18:05" };
+            var sc5 = new Schedule { Id = 5, Day = Enums.DayType.Workday, Type = Enums.RouteType.Town, LineId = 5, DepartureTime = "14-14:10|15:15-16:05" };
+
+            context.Schedules.AddOrUpdate(sc => sc.Id, sc1);
+            context.Schedules.AddOrUpdate(sc => sc.Id, sc2);
+            context.Schedules.AddOrUpdate(sc => sc.Id, sc3);
+            context.Schedules.AddOrUpdate(sc => sc.Id, sc4);
+            context.Schedules.AddOrUpdate(sc => sc.Id, sc5);
+            context.SaveChanges();
+
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 var store = new RoleStore<IdentityRole>(context);

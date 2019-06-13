@@ -42,5 +42,24 @@ namespace WebApp.Persistence.Repository
             }
             return s;
         }
+
+        public List<string> GetRouteS(Enums.RouteType type)
+        {
+            List<string> retVal = new List<string>();
+            string s = " ";
+
+            foreach (var i in AppDbContext.Routes)
+            {
+                if (i.RouteType == type)
+                {
+
+                    s += i.RouteNumber.ToString();
+                    s += GetStationNames(i.Id);
+                    retVal.Add(s);
+                    s = "";
+                }
+            }
+            return retVal;
+        }
     }
 }

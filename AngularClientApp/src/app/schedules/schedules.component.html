@@ -1,0 +1,46 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">
+        Red voznje:
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Odaberite tip linije: </td>
+      <td>
+          <select #routeType (change)="ShowLines(routeType.value)">
+               <option value="0">Prigradski</option>
+              <option value="1">Gradski</option>  
+            </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Odaberite dan: </td>
+      <td>
+          <select #dayType>
+               <option value="0">Radni dan</option>
+              <option value="1">Subota</option>  
+              <option value="2">Nedelja</option>                          
+            </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Odaberite liniju: </td>
+        <select #lineName>
+          <option *ngFor="let line of lines" [value]="line">{{line}}</option>
+        </select>
+    </tr>
+    <tr>
+      <td colspan="2">
+        {{time}}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button  type="submit" (click)="ShowSchedules(routeType.value, dayType.value, lineName.value)">Prikazi</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

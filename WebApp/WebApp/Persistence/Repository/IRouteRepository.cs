@@ -12,5 +12,6 @@ namespace WebApp.Persistence.Repository
    public interface IRouteRepository : IRepository<Line, int>
     {
         string GetRoute(RouteType type);
+        List<string> GetRouteS(RouteType type);
     }
 }
